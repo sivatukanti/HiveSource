@@ -1,0 +1,204 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+package org.apache.hadoop.fs;
+
+import org.apache.hadoop.crypto.JceAesCtrCryptoCodec;
+import org.apache.hadoop.crypto.OpensslAesCtrCryptoCodec;
+import org.apache.hadoop.crypto.CipherSuite;
+import org.apache.hadoop.classification.InterfaceAudience;
+
+@InterfaceAudience.Public
+public class CommonConfigurationKeysPublic
+{
+    public static final String NET_TOPOLOGY_SCRIPT_NUMBER_ARGS_KEY = "net.topology.script.number.args";
+    public static final int NET_TOPOLOGY_SCRIPT_NUMBER_ARGS_DEFAULT = 100;
+    public static final String FS_DEFAULT_NAME_KEY = "fs.defaultFS";
+    public static final String FS_DEFAULT_NAME_DEFAULT = "file:///";
+    public static final String FS_DF_INTERVAL_KEY = "fs.df.interval";
+    public static final long FS_DF_INTERVAL_DEFAULT = 60000L;
+    public static final String FS_DU_INTERVAL_KEY = "fs.du.interval";
+    public static final long FS_DU_INTERVAL_DEFAULT = 600000L;
+    public static final String FS_CLIENT_RESOLVE_REMOTE_SYMLINKS_KEY = "fs.client.resolve.remote.symlinks";
+    public static final boolean FS_CLIENT_RESOLVE_REMOTE_SYMLINKS_DEFAULT = true;
+    public static final String NET_TOPOLOGY_SCRIPT_FILE_NAME_KEY = "net.topology.script.file.name";
+    public static final String NET_TOPOLOGY_NODE_SWITCH_MAPPING_IMPL_KEY = "net.topology.node.switch.mapping.impl";
+    public static final String NET_TOPOLOGY_IMPL_KEY = "net.topology.impl";
+    public static final String NET_TOPOLOGY_TABLE_MAPPING_FILE_KEY = "net.topology.table.file.name";
+    public static final String NET_DEPENDENCY_SCRIPT_FILE_NAME_KEY = "net.topology.dependency.script.file.name";
+    public static final String FS_TRASH_CHECKPOINT_INTERVAL_KEY = "fs.trash.checkpoint.interval";
+    public static final long FS_TRASH_CHECKPOINT_INTERVAL_DEFAULT = 0L;
+    public static final String FS_PROTECTED_DIRECTORIES = "fs.protected.directories";
+    public static final long FS_LOCAL_BLOCK_SIZE_DEFAULT = 33554432L;
+    public static final String FS_AUTOMATIC_CLOSE_KEY = "fs.automatic.close";
+    public static final boolean FS_AUTOMATIC_CLOSE_DEFAULT = true;
+    public static final String FS_FILE_IMPL_KEY = "fs.file.impl";
+    public static final String FS_FTP_HOST_KEY = "fs.ftp.host";
+    public static final String FS_FTP_HOST_PORT_KEY = "fs.ftp.host.port";
+    public static final String FS_TRASH_INTERVAL_KEY = "fs.trash.interval";
+    public static final long FS_TRASH_INTERVAL_DEFAULT = 0L;
+    public static final String FS_CLIENT_TOPOLOGY_RESOLUTION_ENABLED = "fs.client.resolve.topology.enabled";
+    public static final boolean FS_CLIENT_TOPOLOGY_RESOLUTION_ENABLED_DEFAULT = false;
+    public static final String IO_MAPFILE_BLOOM_SIZE_KEY = "io.mapfile.bloom.size";
+    public static final int IO_MAPFILE_BLOOM_SIZE_DEFAULT = 1048576;
+    public static final String IO_MAPFILE_BLOOM_ERROR_RATE_KEY = "io.mapfile.bloom.error.rate";
+    public static final float IO_MAPFILE_BLOOM_ERROR_RATE_DEFAULT = 0.005f;
+    public static final String IO_COMPRESSION_CODEC_LZO_CLASS_KEY = "io.compression.codec.lzo.class";
+    public static final String IO_MAP_INDEX_INTERVAL_KEY = "io.map.index.interval";
+    public static final int IO_MAP_INDEX_INTERVAL_DEFAULT = 128;
+    public static final String IO_MAP_INDEX_SKIP_KEY = "io.map.index.skip";
+    public static final int IO_MAP_INDEX_SKIP_DEFAULT = 0;
+    public static final String IO_SEQFILE_COMPRESS_BLOCKSIZE_KEY = "io.seqfile.compress.blocksize";
+    public static final int IO_SEQFILE_COMPRESS_BLOCKSIZE_DEFAULT = 1000000;
+    public static final String IO_FILE_BUFFER_SIZE_KEY = "io.file.buffer.size";
+    public static final int IO_FILE_BUFFER_SIZE_DEFAULT = 4096;
+    public static final String IO_SKIP_CHECKSUM_ERRORS_KEY = "io.skip.checksum.errors";
+    public static final boolean IO_SKIP_CHECKSUM_ERRORS_DEFAULT = false;
+    @Deprecated
+    public static final String IO_SORT_MB_KEY = "io.sort.mb";
+    public static final int IO_SORT_MB_DEFAULT = 100;
+    @Deprecated
+    public static final String IO_SORT_FACTOR_KEY = "io.sort.factor";
+    public static final int IO_SORT_FACTOR_DEFAULT = 100;
+    public static final String SEQ_IO_SORT_MB_KEY = "seq.io.sort.mb";
+    public static final int SEQ_IO_SORT_MB_DEFAULT = 100;
+    public static final String SEQ_IO_SORT_FACTOR_KEY = "seq.io.sort.factor";
+    public static final int SEQ_IO_SORT_FACTOR_DEFAULT = 100;
+    public static final String IO_SERIALIZATIONS_KEY = "io.serializations";
+    public static final String TFILE_IO_CHUNK_SIZE_KEY = "tfile.io.chunk.size";
+    public static final int TFILE_IO_CHUNK_SIZE_DEFAULT = 1048576;
+    public static final String TFILE_FS_INPUT_BUFFER_SIZE_KEY = "tfile.fs.input.buffer.size";
+    public static final int TFILE_FS_INPUT_BUFFER_SIZE_DEFAULT = 262144;
+    public static final String TFILE_FS_OUTPUT_BUFFER_SIZE_KEY = "tfile.fs.output.buffer.size";
+    public static final int TFILE_FS_OUTPUT_BUFFER_SIZE_DEFAULT = 262144;
+    public static final String HADOOP_CALLER_CONTEXT_ENABLED_KEY = "hadoop.caller.context.enabled";
+    public static final boolean HADOOP_CALLER_CONTEXT_ENABLED_DEFAULT = false;
+    public static final String HADOOP_CALLER_CONTEXT_MAX_SIZE_KEY = "hadoop.caller.context.max.size";
+    public static final int HADOOP_CALLER_CONTEXT_MAX_SIZE_DEFAULT = 128;
+    public static final String HADOOP_CALLER_CONTEXT_SIGNATURE_MAX_SIZE_KEY = "hadoop.caller.context.signature.max.size";
+    public static final int HADOOP_CALLER_CONTEXT_SIGNATURE_MAX_SIZE_DEFAULT = 40;
+    public static final String IPC_CLIENT_CONNECTION_MAXIDLETIME_KEY = "ipc.client.connection.maxidletime";
+    public static final int IPC_CLIENT_CONNECTION_MAXIDLETIME_DEFAULT = 10000;
+    public static final String IPC_CLIENT_CONNECT_TIMEOUT_KEY = "ipc.client.connect.timeout";
+    public static final int IPC_CLIENT_CONNECT_TIMEOUT_DEFAULT = 20000;
+    public static final String IPC_CLIENT_CONNECT_MAX_RETRIES_KEY = "ipc.client.connect.max.retries";
+    public static final int IPC_CLIENT_CONNECT_MAX_RETRIES_DEFAULT = 10;
+    public static final String IPC_CLIENT_CONNECT_RETRY_INTERVAL_KEY = "ipc.client.connect.retry.interval";
+    public static final int IPC_CLIENT_CONNECT_RETRY_INTERVAL_DEFAULT = 1000;
+    public static final String IPC_CLIENT_CONNECT_MAX_RETRIES_ON_SOCKET_TIMEOUTS_KEY = "ipc.client.connect.max.retries.on.timeouts";
+    public static final int IPC_CLIENT_CONNECT_MAX_RETRIES_ON_SOCKET_TIMEOUTS_DEFAULT = 45;
+    public static final String IPC_CLIENT_TCPNODELAY_KEY = "ipc.client.tcpnodelay";
+    public static final boolean IPC_CLIENT_TCPNODELAY_DEFAULT = true;
+    public static final String IPC_CLIENT_LOW_LATENCY = "ipc.client.low-latency";
+    public static final boolean IPC_CLIENT_LOW_LATENCY_DEFAULT = false;
+    public static final String IPC_SERVER_LISTEN_QUEUE_SIZE_KEY = "ipc.server.listen.queue.size";
+    public static final int IPC_SERVER_LISTEN_QUEUE_SIZE_DEFAULT = 128;
+    public static final String IPC_CLIENT_KILL_MAX_KEY = "ipc.client.kill.max";
+    public static final int IPC_CLIENT_KILL_MAX_DEFAULT = 10;
+    public static final String IPC_CLIENT_IDLETHRESHOLD_KEY = "ipc.client.idlethreshold";
+    public static final int IPC_CLIENT_IDLETHRESHOLD_DEFAULT = 4000;
+    public static final String IPC_SERVER_TCPNODELAY_KEY = "ipc.server.tcpnodelay";
+    public static final boolean IPC_SERVER_TCPNODELAY_DEFAULT = true;
+    public static final String IPC_SERVER_MAX_CONNECTIONS_KEY = "ipc.server.max.connections";
+    public static final int IPC_SERVER_MAX_CONNECTIONS_DEFAULT = 0;
+    public static final String IPC_SERVER_LOG_SLOW_RPC = "ipc.server.log.slow.rpc";
+    public static final boolean IPC_SERVER_LOG_SLOW_RPC_DEFAULT = false;
+    public static final String HADOOP_RPC_SOCKET_FACTORY_CLASS_DEFAULT_KEY = "hadoop.rpc.socket.factory.class.default";
+    public static final String HADOOP_RPC_SOCKET_FACTORY_CLASS_DEFAULT_DEFAULT = "org.apache.hadoop.net.StandardSocketFactory";
+    public static final String HADOOP_SOCKS_SERVER_KEY = "hadoop.socks.server";
+    public static final String HADOOP_UTIL_HASH_TYPE_KEY = "hadoop.util.hash.type";
+    public static final String HADOOP_UTIL_HASH_TYPE_DEFAULT = "murmur";
+    public static final String HADOOP_SECURITY_GROUP_MAPPING = "hadoop.security.group.mapping";
+    public static final String HADOOP_SECURITY_GROUPS_CACHE_SECS = "hadoop.security.groups.cache.secs";
+    public static final long HADOOP_SECURITY_GROUPS_CACHE_SECS_DEFAULT = 300L;
+    public static final String HADOOP_SECURITY_GROUPS_NEGATIVE_CACHE_SECS = "hadoop.security.groups.negative-cache.secs";
+    public static final long HADOOP_SECURITY_GROUPS_NEGATIVE_CACHE_SECS_DEFAULT = 30L;
+    public static final String HADOOP_SECURITY_GROUPS_CACHE_WARN_AFTER_MS = "hadoop.security.groups.cache.warn.after.ms";
+    public static final long HADOOP_SECURITY_GROUPS_CACHE_WARN_AFTER_MS_DEFAULT = 5000L;
+    public static final String HADOOP_SECURITY_GROUPS_CACHE_BACKGROUND_RELOAD = "hadoop.security.groups.cache.background.reload";
+    public static final boolean HADOOP_SECURITY_GROUPS_CACHE_BACKGROUND_RELOAD_DEFAULT = false;
+    public static final String HADOOP_SECURITY_GROUPS_CACHE_BACKGROUND_RELOAD_THREADS = "hadoop.security.groups.cache.background.reload.threads";
+    public static final int HADOOP_SECURITY_GROUPS_CACHE_BACKGROUND_RELOAD_THREADS_DEFAULT = 3;
+    public static final String HADOOP_SECURITY_GROUP_SHELL_COMMAND_TIMEOUT_KEY = "hadoop.security.groups.shell.command.timeout";
+    @Deprecated
+    public static final String HADOOP_SECURITY_GROUP_SHELL_COMMAND_TIMEOUT_SECS = "hadoop.security.groups.shell.command.timeout";
+    public static final long HADOOP_SECURITY_GROUP_SHELL_COMMAND_TIMEOUT_DEFAULT = 0L;
+    @Deprecated
+    public static final long HADOOP_SECURITY_GROUP_SHELL_COMMAND_TIMEOUT_SECS_DEFAULT = 0L;
+    public static final String HADOOP_SECURITY_AUTHENTICATION = "hadoop.security.authentication";
+    public static final String HADOOP_SECURITY_AUTHORIZATION = "hadoop.security.authorization";
+    public static final String HADOOP_SECURITY_INSTRUMENTATION_REQUIRES_ADMIN = "hadoop.security.instrumentation.requires.admin";
+    public static final String HADOOP_SECURITY_SERVICE_USER_NAME_KEY = "hadoop.security.service.user.name.key";
+    public static final String HADOOP_SECURITY_AUTH_TO_LOCAL = "hadoop.security.auth_to_local";
+    public static final String HADOOP_SECURITY_AUTH_TO_LOCAL_MECHANISM = "hadoop.security.auth_to_local.mechanism";
+    public static final String HADOOP_SECURITY_DNS_INTERFACE_KEY = "hadoop.security.dns.interface";
+    public static final String HADOOP_SECURITY_DNS_NAMESERVER_KEY = "hadoop.security.dns.nameserver";
+    public static final String HADOOP_TOKEN_FILES = "hadoop.token.files";
+    public static final String HADOOP_HTTP_AUTHENTICATION_TYPE = "hadoop.http.authentication.type";
+    public static final String HADOOP_KERBEROS_MIN_SECONDS_BEFORE_RELOGIN = "hadoop.kerberos.min.seconds.before.relogin";
+    public static final int HADOOP_KERBEROS_MIN_SECONDS_BEFORE_RELOGIN_DEFAULT = 60;
+    public static final String HADOOP_RPC_PROTECTION = "hadoop.rpc.protection";
+    public static final String HADOOP_SECURITY_SASL_PROPS_RESOLVER_CLASS = "hadoop.security.saslproperties.resolver.class";
+    public static final String HADOOP_SECURITY_CRYPTO_CODEC_CLASSES_KEY_PREFIX = "hadoop.security.crypto.codec.classes";
+    public static final String HADOOP_SECURITY_CRYPTO_CODEC_CLASSES_AES_CTR_NOPADDING_KEY;
+    public static final String HADOOP_SECURITY_CRYPTO_CODEC_CLASSES_AES_CTR_NOPADDING_DEFAULT;
+    public static final String HADOOP_SECURITY_CRYPTO_CIPHER_SUITE_KEY = "hadoop.security.crypto.cipher.suite";
+    public static final String HADOOP_SECURITY_CRYPTO_CIPHER_SUITE_DEFAULT = "AES/CTR/NoPadding";
+    public static final String HADOOP_SECURITY_CRYPTO_JCE_PROVIDER_KEY = "hadoop.security.crypto.jce.provider";
+    public static final String HADOOP_SECURITY_CRYPTO_JCEKS_KEY_SERIALFILTER = "hadoop.security.crypto.jceks.key.serialfilter";
+    public static final String HADOOP_SECURITY_CRYPTO_BUFFER_SIZE_KEY = "hadoop.security.crypto.buffer.size";
+    public static final int HADOOP_SECURITY_CRYPTO_BUFFER_SIZE_DEFAULT = 8192;
+    public static final String HADOOP_SECURITY_IMPERSONATION_PROVIDER_CLASS = "hadoop.security.impersonation.provider.class";
+    public static final String HADOOP_SECURITY_KEY_PROVIDER_PATH = "hadoop.security.key.provider.path";
+    public static final String HADOOP_SECURITY_KEY_DEFAULT_BITLENGTH_KEY = "hadoop.security.key.default.bitlength";
+    public static final int HADOOP_SECURITY_KEY_DEFAULT_BITLENGTH_DEFAULT = 128;
+    public static final String HADOOP_SECURITY_KEY_DEFAULT_CIPHER_KEY = "hadoop.security.key.default.cipher";
+    public static final String HADOOP_SECURITY_KEY_DEFAULT_CIPHER_DEFAULT = "AES/CTR/NoPadding";
+    public static final String KMS_CLIENT_ENC_KEY_CACHE_SIZE = "hadoop.security.kms.client.encrypted.key.cache.size";
+    public static final int KMS_CLIENT_ENC_KEY_CACHE_SIZE_DEFAULT = 500;
+    public static final String KMS_CLIENT_ENC_KEY_CACHE_LOW_WATERMARK = "hadoop.security.kms.client.encrypted.key.cache.low-watermark";
+    public static final float KMS_CLIENT_ENC_KEY_CACHE_LOW_WATERMARK_DEFAULT = 0.3f;
+    public static final String KMS_CLIENT_ENC_KEY_CACHE_NUM_REFILL_THREADS = "hadoop.security.kms.client.encrypted.key.cache.num.refill.threads";
+    public static final int KMS_CLIENT_ENC_KEY_CACHE_NUM_REFILL_THREADS_DEFAULT = 2;
+    public static final String KMS_CLIENT_ENC_KEY_CACHE_EXPIRY_MS = "hadoop.security.kms.client.encrypted.key.cache.expiry";
+    public static final int KMS_CLIENT_ENC_KEY_CACHE_EXPIRY_DEFAULT = 43200000;
+    public static final String KMS_CLIENT_TIMEOUT_SECONDS = "hadoop.security.kms.client.timeout";
+    public static final int KMS_CLIENT_TIMEOUT_DEFAULT = 60;
+    public static final String KMS_CLIENT_FAILOVER_MAX_RETRIES_KEY = "hadoop.security.kms.client.failover.max.retries";
+    public static final String KMS_CLIENT_FAILOVER_SLEEP_BASE_MILLIS_KEY = "hadoop.security.kms.client.failover.sleep.base.millis";
+    public static final int KMS_CLIENT_FAILOVER_SLEEP_BASE_MILLIS_DEFAULT = 100;
+    public static final String KMS_CLIENT_FAILOVER_SLEEP_MAX_MILLIS_KEY = "hadoop.security.kms.client.failover.sleep.max.millis";
+    public static final int KMS_CLIENT_FAILOVER_SLEEP_MAX_MILLIS_DEFAULT = 2000;
+    public static final String HADOOP_SECURITY_JAVA_SECURE_RANDOM_ALGORITHM_KEY = "hadoop.security.java.secure.random.algorithm";
+    public static final String HADOOP_SECURITY_JAVA_SECURE_RANDOM_ALGORITHM_DEFAULT = "SHA1PRNG";
+    public static final String HADOOP_SECURITY_SECURE_RANDOM_IMPL_KEY = "hadoop.security.secure.random.impl";
+    public static final String HADOOP_SECURITY_SECURE_RANDOM_DEVICE_FILE_PATH_KEY = "hadoop.security.random.device.file.path";
+    public static final String HADOOP_SECURITY_SECURE_RANDOM_DEVICE_FILE_PATH_DEFAULT = "/dev/urandom";
+    public static final String HADOOP_SHELL_MISSING_DEFAULT_FS_WARNING_KEY = "hadoop.shell.missing.defaultFs.warning";
+    public static final boolean HADOOP_SHELL_MISSING_DEFAULT_FS_WARNING_DEFAULT = false;
+    public static final String HADOOP_SHELL_SAFELY_DELETE_LIMIT_NUM_FILES = "hadoop.shell.safely.delete.limit.num.files";
+    public static final long HADOOP_SHELL_SAFELY_DELETE_LIMIT_NUM_FILES_DEFAULT = 100L;
+    public static final String HADOOP_HTTP_LOGS_ENABLED = "hadoop.http.logs.enabled";
+    public static final boolean HADOOP_HTTP_LOGS_ENABLED_DEFAULT = true;
+    public static final String HADOOP_SECURITY_CREDENTIAL_PROVIDER_PATH = "hadoop.security.credential.provider.path";
+    public static final String HADOOP_SECURITY_CREDENTIAL_CLEAR_TEXT_FALLBACK = "hadoop.security.credential.clear-text-fallback";
+    public static final boolean HADOOP_SECURITY_CREDENTIAL_CLEAR_TEXT_FALLBACK_DEFAULT = true;
+    public static final String HADOOP_SECURITY_CREDENTIAL_PASSWORD_FILE_KEY = "hadoop.security.credstore.java-keystore-provider.password-file";
+    public static final String HADOOP_SECURITY_SENSITIVE_CONFIG_KEYS = "hadoop.security.sensitive-config-keys";
+    public static final String HADOOP_SECURITY_SENSITIVE_CONFIG_KEYS_DEFAULT;
+    @Deprecated
+    public static final String HADOOP_SYSTEM_TAGS = "hadoop.system.tags";
+    @Deprecated
+    public static final String HADOOP_CUSTOM_TAGS = "hadoop.custom.tags";
+    public static final String HADOOP_TAGS_SYSTEM = "hadoop.tags.system";
+    public static final String HADOOP_TAGS_CUSTOM = "hadoop.tags.custom";
+    public static final String SERVICE_SHUTDOWN_TIMEOUT = "hadoop.service.shutdown.timeout";
+    public static final long SERVICE_SHUTDOWN_TIMEOUT_DEFAULT = 30L;
+    
+    static {
+        HADOOP_SECURITY_CRYPTO_CODEC_CLASSES_AES_CTR_NOPADDING_KEY = "hadoop.security.crypto.codec.classes" + CipherSuite.AES_CTR_NOPADDING.getConfigSuffix();
+        HADOOP_SECURITY_CRYPTO_CODEC_CLASSES_AES_CTR_NOPADDING_DEFAULT = OpensslAesCtrCryptoCodec.class.getName() + "," + JceAesCtrCryptoCodec.class.getName();
+        HADOOP_SECURITY_SENSITIVE_CONFIG_KEYS_DEFAULT = String.join(",", "secret$", "password$", "ssl.keystore.pass$", "fs.s3.*[Ss]ecret.?[Kk]ey", "fs.s3a.*.server-side-encryption.key", "fs.azure\\.account.key.*", "credential$", "oauth.*secret", "oauth.*password", "oauth.*token", "hadoop.security.sensitive-config-keys");
+    }
+}

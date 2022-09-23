@@ -1,0 +1,19 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+package org.apache.commons.net.ftp;
+
+import java.io.IOException;
+
+public class FTPConnectionClosedException extends IOException
+{
+    private static final long serialVersionUID = 3500547241659379952L;
+    
+    public FTPConnectionClosedException() {
+    }
+    
+    public FTPConnectionClosedException(final String message) {
+        super(message);
+    }
+}

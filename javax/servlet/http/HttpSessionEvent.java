@@ -1,0 +1,20 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+package javax.servlet.http;
+
+import java.util.EventObject;
+
+public class HttpSessionEvent extends EventObject
+{
+    private static final long serialVersionUID = -7622791603672342895L;
+    
+    public HttpSessionEvent(final HttpSession source) {
+        super(source);
+    }
+    
+    public HttpSession getSession() {
+        return (HttpSession)super.getSource();
+    }
+}
